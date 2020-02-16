@@ -1,0 +1,35 @@
+package dns;
+import java.net.*;
+import javax.swing.*;
+public class Dns {
+public static void main(String[] args) {
+try{
+int j=1;
+while(j==1)
+{
+String hst_name=JOptionPane.showInputDialog(null,"Enter host name");
+InetAddress ip1=InetAddress.getByName(hst_name);
+JOptionPane.showMessageDialog(null,"IP Address:"+ip1);
+InetAddress getip[]=InetAddress.getAllByName(hst_name);
+int i;
+String sa="";
+for(i=0;i<getip.length;i++)
+{
+sa=sa+getip[i]+"\n"
+}
+JOptionPane.showMessageDialog(null, sa);
+String ip=JOptionPane.showInputDialog(null,"Enter IP address");
+InetAddress ip2=InetAddress.getByName(ip);
+JOptionPane.showMessageDialog(null, ip2.getHostName());
+JOptionPane.showMessageDialog(null, "LocalHost:"+InetAddress.getLocalHost());
+String r=JOptionPane.showInputDialog(null,"Do you wish to continue enter 1");
+if(r=="1"){
+j=0;
+}  
+}  
+}
+catch(Exception e){
+System.out.println("Error");
+}  
+}  
+}
